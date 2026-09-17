@@ -1,0 +1,24 @@
+{
+  "name": "sample_mern_app",
+  "version": "1.0.0",
+  "description": "hrmanagementsystem",
+  "homepage": "https://github.com/Asmitha16939/sample_mern_app#readme",
+  "bugs": {
+    "url": "https://github.com/Asmitha16939/sample_mern_app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Asmitha16939/sample_mern_app.git"
+  },
+  "license": "ISC",
+  "author": "Asmitha",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongose": "^0.0.2-security"
+  }
+}

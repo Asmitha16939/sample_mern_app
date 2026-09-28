@@ -1,16 +1,15 @@
-let express=require('express');
-let app=express();
 let mongoose=require('mongoose');
-let emproutes=require('./routes/emp_route');
-mongoose.connect("mongodb://localhost:27017/hrmanagement")
-  .then(()=>console.log("db connected successfully"))
-  .catch((err)=>console.log(err))
-
-app.use(express.json()); // used to collect input from UI as JSON data
-
-app.use("/api/emp",emproutes);
-
-//run the server
-app.listen(3002,()=>{
-    console.log("server listening on port 3002");
+let userSchema=mongoose.Schema({
+    name:String,
+    emailid:{
+        type:String,
+        unique:true
+    },
+    password:String,
+    role:{
+        type:String,
+        enum:["HR","EMPLOYEE"]
+    }
 })
+let users=mongoose.model('users',userSchema);
+module.exports={users};

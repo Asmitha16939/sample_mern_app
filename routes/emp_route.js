@@ -32,7 +32,15 @@ let passcheck=await bcrypt.compare(data.password,emailcheck.password);
 router.get("/viewtask",(req,res)=>{
     res.send("viewtask router called");
 })
-router.patch("/updateprofile",(req,res)=>{
-    res.send("update profile router called")
+router.patch("/updateprofile/:id",async(req,res)=>{
+    let data=req.body;
+    if(data.password){
+        data.password=await bcrypt.hash(data.password,10);
+    }
+    let result=await users.findByIdAndUpdate(req.params,id,{$set:data},
+   
+        {new:true});
+
+    res.send(result)
 })
 module.exports=router;

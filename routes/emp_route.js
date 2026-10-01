@@ -1,21 +1,43 @@
-let express = require('express');
-let router = express.Router();
+let express=require('express');
+let router=express.Router()
+let {users} =require('../models/users');
 
-// Import models directly (note: folder name is 'models')
-let users = require('../models/users');
-let task = require('../models/task');
+let bcrypt=require('bcrypt');
+router.post("/register",async (req,res)=>{
+    let data=req.body;    
+    data.password=await bcrypt.hash(data.password,10);
 
-// POST /api/hr/assign-task
-router.post("/assign-task", async (req, res) => {
-    try {
-        let data = req.body;
-        let newtask = new task(data);
-        let result = await newtask.save();
-        res.status(201).send(result);
-    } catch (error) {
-        console.error("Database save error:", error);
-        res.status(500).json({ error: error.message });
+    let newuser=new users(data);
+    let result=await newuser.save();
+    res.send(result);
+})
+
+router.post("/login",async (req,res)=>{
+    let data=req.body;
+    let emailcheck=await users.findOne({emailid:data.emailid})
+    if(emailcheck){
+let passcheck=await bcrypt.compare(data.password,emailcheck.password);
+     if(passcheck){
+        res.send("login successfull");
+     }else{
+        res.send("password wrong")
+     }
+    }else{
+        res.send("user not found");
     }
-});
+})
 
-module.exports = router;
+router.get("/viewtask",(req,res)=>{
+    res.send("viewtask router called");
+})
+
+router.patch("/updateprofile/:id",async (req,res)=>{
+    let data=req.body;
+    if(data.password){
+        data.password=await bcrypt.hash(data.password,10);
+    }
+    let result=await users.findByIdAndUpdate(req.params.id,
+        {$set:data},{new:true});
+    res.send(result)
+})
+module.exports=router;

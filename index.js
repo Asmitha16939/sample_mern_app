@@ -1,8 +1,10 @@
 let express=require('express');
+let cors=require('cors');
 let app=express();
 let mongoose=require('mongoose');
 let emproutes=require('./routes/emp_route');
 let hrroutes=require('./routes/hr_route');
+app.use(cors()); // used to allow cross origin requests from UI
 mongoose.connect("mongodb://localhost:27017/hrmanagement")
   .then(()=>console.log("db connected successfully"))
   .catch((err)=>console.log(err))

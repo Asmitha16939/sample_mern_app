@@ -1,0 +1,121 @@
+.hr-footer {
+    background: linear-gradient(120deg, #10243a 0%, #173b58 100%);
+    color: #e8f0f6;
+    padding: 3.5rem 0 1.25rem;
+    text-align: left;
+}
+
+.hr-footer-brand {
+    align-items: center;
+    color: #ffffff;
+    display: inline-flex;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.hr-footer-brand:hover,
+.hr-footer-brand:focus-visible {
+    color: #8cecff;
+}
+
+.hr-footer-brand-icon {
+    color: #35d7f2;
+    font-size: 1.4rem;
+    margin-right: 0.55rem;
+}
+
+.hr-footer-description,
+.hr-footer-contact {
+    color: #c1cfda;
+    line-height: 1.7;
+    margin: 1rem 0 0;
+    max-width: 24rem;
+}
+
+.hr-footer-heading {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin: 0 0 1rem;
+}
+
+.hr-footer-links {
+    display: grid;
+    gap: 0.55rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hr-footer-links a,
+.hr-footer-contact-link {
+    color: #c1cfda;
+    text-decoration: none;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.hr-footer-links a:hover,
+.hr-footer-links a:focus-visible,
+.hr-footer-contact-link:hover,
+.hr-footer-contact-link:focus-visible {
+    color: #6de6fa;
+}
+
+.hr-footer-links a:hover {
+    padding-left: 0.2rem;
+}
+
+.hr-footer-contact {
+    margin: 0 0 0.85rem;
+}
+
+.hr-footer-contact-link {
+    color: #6de6fa;
+    display: inline-flex;
+    gap: 0.4rem;
+    font-weight: 600;
+}
+
+.hr-footer-contact-link span {
+    transition: transform 0.2s ease;
+}
+
+.hr-footer-contact-link:hover span {
+    transform: translateX(3px);
+}
+
+.hr-footer-bottom {
+    border-top: 1px solid rgba(220, 239, 249, 0.16);
+    color: #aebfcb;
+    margin-top: 2.5rem;
+    padding-top: 1.15rem;
+    text-align: center;
+}
+
+.hr-footer-bottom p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+@media (max-width: 575.98px) {
+    .hr-footer {
+        padding-top: 2.75rem;
+    }
+
+    .hr-footer-bottom {
+        margin-top: 2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hr-footer-brand,
+    .hr-footer-links a,
+    .hr-footer-contact-link,
+    .hr-footer-contact-link span {
+        transition: none;
+    }
+}

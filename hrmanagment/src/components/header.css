@@ -1,10 +1,117 @@
-.header{
-    width:100;
-    height:100;
-    background-color:black;
+.custom-navbar {
+    background: linear-gradient(120deg, #10243a 0%, #173b58 100%);
+    box-shadow: 0 4px 18px rgba(8, 24, 40, 0.2);
+    padding: 14px 0;
 }
-a{
-    color:white;
-    text-decoration:none;
-    padding:5px;
+
+.custom-navbar .container {
+    text-align: left;
+}
+
+.custom-navbar .navbar-brand {
+    align-items: center;
+    color: #ffffff;
+    display: inline-flex;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    transition: color 0.2s ease;
+}
+
+.custom-navbar .navbar-brand:hover,
+.custom-navbar .navbar-brand:focus-visible {
+    color: #8cecff;
+}
+
+.custom-navbar .brand-icon {
+    color: #35d7f2;
+    font-size: 1.4rem;
+    margin-right: 0.55rem;
+}
+
+.custom-navbar .navbar-nav {
+    gap: 0.35rem;
+}
+
+.custom-navbar .nav-link {
+    border-radius: 0.5rem;
+    color: #f3f7fb;
+    font-size: 0.96rem;
+    font-weight: 500;
+    margin: 0 0.15rem;
+    padding: 0.65rem 0.9rem;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link:focus-visible,
+.custom-navbar .nav-link.active {
+    background-color: rgba(68, 211, 239, 0.12);
+    color: #6de6fa;
+}
+
+.custom-navbar .nav-link:hover {
+    transform: translateY(-1px);
+}
+
+.custom-navbar .nav-link.login-btn {
+    background-color: #19bfd8;
+    border-radius: 999px;
+    color: #09263b;
+    font-weight: 700;
+    margin-left: 0.65rem;
+    padding: 0.65rem 1.35rem;
+}
+
+.custom-navbar .nav-link.login-btn:hover,
+.custom-navbar .nav-link.login-btn:focus-visible,
+.custom-navbar .nav-link.login-btn.active {
+    background-color: #64e4f3;
+    color: #09263b;
+}
+
+.custom-navbar .navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    padding: 0.4rem 0.6rem;
+}
+
+.custom-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(53, 215, 242, 0.35);
+}
+
+.custom-navbar .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+@media (max-width: 991.98px) {
+    .custom-navbar {
+        padding: 12px 0;
+    }
+
+    .custom-navbar .navbar-collapse {
+        padding-top: 0.75rem;
+    }
+
+    .custom-navbar .navbar-nav {
+        align-items: stretch !important;
+        gap: 0.25rem;
+    }
+
+    .custom-navbar .nav-link {
+        margin: 0;
+    }
+
+    .custom-navbar .nav-link.login-btn {
+        align-self: flex-start;
+        margin: 0.35rem 0 0;
+        text-align: center;
+        min-width: 7rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .custom-navbar .navbar-brand,
+    .custom-navbar .nav-link {
+        transition: none;
+    }
 }
